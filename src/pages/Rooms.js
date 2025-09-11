@@ -25,6 +25,12 @@ const roomsData = [
       "/images/rooms/2room3.webp",
       "/images/rooms/2room4.webp",
       "/images/rooms/2room5.webp",
+      "/images/rooms/N_Room1.webp",
+      "/images/rooms/N_Room2.webp",
+      "/images/rooms/N_Room3.webp",
+      "/images/rooms/N_Room4.webp",
+      "/images/rooms/N_Room5.webp",
+
     ],
   },
   {
