@@ -2,8 +2,6 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-// Import your logo
-import logo from "../assets/logo/sj logo.jpg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +13,7 @@ export default function Navbar() {
           
           {/* Logo + Text */}
           <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md" />
+          <img src="/images/logo/sj logo.webp" alt="Logo" className="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md" />
             <span className="text-2xl font-bold text-white">
               ShriJi Girls Hostel Indore
             </span>

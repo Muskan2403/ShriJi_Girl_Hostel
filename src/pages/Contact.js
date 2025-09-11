@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
-import contact from "../assets/contact/contact1.jpg";
 
 const contactData = [
   {
@@ -131,7 +130,7 @@ export default function Contact() {
       {/* Hero Section */}
       <div className="relative h-[40vh] flex items-center justify-center">
         <img
-          src={contact}
+          src="/images/contact/contact1.webp"
           alt="Contact"
           className="absolute inset-0 w-full h-full object-cover"
         />

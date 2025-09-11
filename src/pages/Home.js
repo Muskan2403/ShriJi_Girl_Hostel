@@ -1,17 +1,12 @@
 import { FaBed, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaShieldAlt, FaUtensils, FaWifi } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import gallery2 from "../assets/gallery/gallery2.jpg";
-import gallery1 from "../assets/gallery/gallery3.jpg";
-import home from "../assets/logo/home1.jpg";
-import room1 from "../assets/rooms/P2room1.jpg";
-import room2 from "../assets/rooms/P3room1.jpg";
 
 function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center h-[80vh]" style={{ backgroundImage: `url(${home})` }}>
+      <section className="relative bg-cover bg-center h-[80vh]" style={{ backgroundImage: `url(/images/logo/home1.webp)` }}>
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to ShriJi Girls Hostel Indore</h1>
           <p className="text-lg md:text-2xl mb-6">Comfortable, Affordable, and Modern Living Spaces</p>
@@ -76,22 +71,22 @@ function Home() {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
-        src={room1}
+        src="/images/rooms/P2room1.webp"
         alt="Room 1"
       />
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
-        src={room2}
+        src="/images/rooms/P3room1.webp"
         alt="Room 2"
       />
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
-        src={gallery1}
+        src="/images/gallery/gallery3.webp"
         alt="Gallery 1"
       />
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
-        src={gallery2}
+        src="/images/gallery/gallery2.webp"
         alt="Gallery 2"
       />
     </div>

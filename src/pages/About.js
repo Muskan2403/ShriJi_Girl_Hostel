@@ -1,9 +1,3 @@
-import about1 from "../assets/about/about1.jpeg";
-import about2 from "../assets/about/about2.jpg";
-import about3 from "../assets/about/about3.jpeg";
-import about4 from "../assets/about/about4.jpg";
-import about5 from "../assets/about/about5.jpg";
-
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
@@ -11,7 +5,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center">
         <img
-          src={about1}
+          src="/images/about/about1.webp"
           alt="About Hostel"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -39,7 +33,7 @@ export default function About() {
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0">
             <img
-              src={about5}
+              src="/images/about/about5.webp"
               alt="Mission"
               className="rounded-2xl shadow-lg w-full hover:scale-105 transition duration-300"
             />
@@ -54,7 +48,7 @@ export default function About() {
           {/* Card 1 */}
           <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer">
             <img
-              src={about2}
+              src="/images/about/about2.webp"
               alt="Safe & Secure"
               className="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300"
             />
@@ -71,7 +65,7 @@ export default function About() {
           {/* Card 2 */}
           <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer">
             <img
-              src={about4}
+              src="/images/about/about4.webp"
               alt="Affordable Pricing"
               className="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300"
             />
@@ -88,7 +82,7 @@ export default function About() {
           {/* Card 3 */}
           <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer">
             <img
-              src={about3}
+              src="/images/about/about3.webp"
               alt="Community Living"
               className="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300"
             />

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-import book1 from "../assets/booking/book1.jpg";
 
 export default function Booking() {
   const [formData, setFormData] = useState({
@@ -143,7 +142,7 @@ export default function Booking() {
         {/* Left Image */}
         <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-lg h-full">
           <img
-            src={book1} 
+            src="/images/booking/book1.webp"
             alt="Book Your Room"
             className="w-full h-full object-cover"
           />
