@@ -8,10 +8,14 @@ const roomsData = [
     type: "Normal",
     price: 8500,
     images: [
+      "/images/rooms/1room5.webp",
       "/images/rooms/1room1.webp",
+      "/images/rooms/1room6.webp",
       "/images/rooms/1room2.webp",
       "/images/rooms/1room3.webp",
+      "/images/rooms/1room7.webp",
       "/images/rooms/1room4.webp",
+      "/images/rooms/1room8.webp",
     ],
   },
   {
