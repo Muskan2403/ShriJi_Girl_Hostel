@@ -78,6 +78,9 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const galleryImages = [
+    { src: "/images/gallery/Office1.webp", title: "Office1" },
+    { src: "/images/gallery/Office2.webp", title: "Office2" },
+    { src: "/images/gallery/Office3.webp", title: "Office3" },
     { src: "/images/gallery/gallery.webp", title: "Event 1" },
     { src: "/images/gallery/gallery1.webp", title: "Event 2" },
     { src: "/images/gallery/gallery2.webp", title: "Event Area 1" },

@@ -1,10 +1,43 @@
+import { useEffect, useState } from "react";
 import { FaBed, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaShieldAlt, FaUtensils, FaWifi } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
 function Home() {
+  const [showModal, setShowModal] = useState(false);
+  const [showOffer, setShowOffer] = useState(false);
+
+  useEffect(() => {
+    setShowOffer(true);
+  }, []);
+
   return (
     <div className="w-full">
+      {/* 🎉 Offer Popup Modal */}
+      {showOffer && (
+    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
+    <div className="relative bg-white rounded-xl shadow-2xl max-w-md w-[90%] p-3">
+      
+      {/* Close Button */}
+      <button
+        onClick={() => setShowOffer(false)}
+        className="absolute -top-2 -right-2 bg-black text-white rounded-full w-7 h-7 flex items-center justify-center font-bold hover:bg-red-600"
+      >
+        ✕
+      </button>
+
+      {/* Offer Image */}
+      <a href="/rooms">
+        <img
+          src="/images/logo/Navratri.jpg"
+          alt="Navratri Special Offer"
+          className="w-full rounded-lg"
+        />
+      </a>
+    </div>
+  </div>
+)}
+
       {/* Hero Section */}
       <section className="relative bg-cover bg-center h-[80vh]" style={{ backgroundImage: `url(/images/logo/home1.webp)` }}>
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white px-4">
@@ -19,7 +52,9 @@ function Home() {
       {/* Highlights Section */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
-          <div className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+          <div 
+            onClick={() => window.location.href = "/rooms"}
+          className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
             <FaBed className="text-4xl text-yellow-500 mb-3" />
             <h3 className="font-bold text-lg">Fully Furnished Rooms</h3>
             <p className="text-gray-600 text-sm text-center">Spacious and cozy rooms designed for comfort.</p>
@@ -48,11 +83,15 @@ function Home() {
           <h2 className="text-3xl font-bold mb-6">Why Choose ShriJi Girls Hostel?</h2>
           <p className="text-gray-600 mb-12">We provide the best facilities for students and working professionals.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-pink-500 to-purple-600 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 text-white">
+            <div 
+            onClick={() => setShowModal(true)}
+            className="bg-gradient-to-br from-pink-500 to-purple-600 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 text-white">
               <h3 className="text-xl font-semibold mb-3">Prime Location</h3>
               <p className="text-pink-100">Located near top universities & business hubs.</p>
             </div>
-            <div className="bg-gradient-to-br from-yellow-500 to-orange-600 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 text-white">
+            <div 
+            onClick={() => window.location.href = "/rooms"}
+            className="bg-gradient-to-br from-yellow-500 to-orange-600 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 text-white">
               <h3 className="text-xl font-semibold mb-3">Affordable Pricing</h3>
               <p className="text-yellow-100">Quality living at pocket-friendly prices.</p>
             </div>
@@ -64,6 +103,81 @@ function Home() {
         </div>
       </section>
 
+      {/* Modal for Prime Location */}
+{showModal && (
+  <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+    <div className="bg-white max-w-3xl w-full p-6 rounded-xl shadow-lg overflow-y-auto max-h-[80vh] relative">
+      
+      {/* Close Cross */}
+      <button
+        onClick={() => setShowModal(false)}
+        className="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl font-bold"
+      >
+        ✕
+      </button>
+
+      {/* Coaching Centers */}
+      <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        📍 Nearby Coaching Centers & Institutes
+      </h2>
+      <ul className="space-y-3 text-gray-700 text-left">
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/PW.webp" alt="PW Logo" className="w-6 h-6 object-contain" />
+          PW Govt Exam Wallah Indore – Tirupati Heights, Vishnupuri
+        </li>
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/BT.webp" alt="Balaji Logo" className="w-6 h-6 object-contain" />
+          Balaji Tutorials – 221, Veda Business Park, Bhawarkua
+        </li>
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/UC.webp" alt="Utkarsh Logo" className="w-6 h-6 object-contain" />
+          Utkarsh Classes Indore – Harshdeep Arcade, Near Gurjar Hospital
+        </li>
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/PWV.webp" alt="PW Vidyapeeth Logo" className="w-6 h-6 object-contain" />
+          Physics Wallah Vidyapeeth Indore – Block-7, Bhawarkua Main Road
+        </li>
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/TA.webp" alt="Tagore Logo" className="w-6 h-6 object-contain" />
+          Tagore Academy – Sundaram Complex
+        </li>
+        {/* Continue the same for others */}
+      </ul>
+
+      {/* Beauty & Skill Institutes */}
+      <h2 className="text-2xl font-bold mt-6 mb-4 flex items-center gap-2">
+        📍 Beauty & Skill Institutes
+      </h2>
+      <ul className="space-y-3 text-gray-700 text-left">
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/VLCC.webp" alt="VLCC Logo" className="w-6 h-6 object-contain" />
+          VLCC School of Beauty – Snehnagar
+        </li>
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/Orane.webp" alt="Orane Logo" className="w-6 h-6 object-contain" />
+          Orane International School of Beauty – Veda Business Park
+        </li>
+      </ul>
+
+      {/* Colleges */}
+      <h2 className="text-2xl font-bold mt-6 mb-4 flex items-center gap-2">
+        📍 Colleges & Universities
+      </h2>
+      <ul className="space-y-3 text-gray-700 text-left">
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/Atal.webp" alt="ABV College Logo" className="w-6 h-6 object-contain" />
+          Shri Atal Bihari Vajpayee Govt Arts & Commerce College – Bhawarkua
+        </li>
+        <li className="flex items-center gap-3">
+          <img src="/images/logo/DAVV.webp" alt="DAVV Logo" className="w-6 h-6 object-contain" />
+          Devi Ahilya Vishwavidyalaya (DAVV University) – Indore
+        </li>
+      </ul>
+    </div>
+  </div>
+)}
+
+
       {/* Gallery Section */}
       <section className="py-12 bg-gray-100">
   <div className="max-w-6xl mx-auto px-4">
@@ -71,13 +185,13 @@ function Home() {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
-        src="/images/rooms/P2room1.webp"
-        alt="Room 1"
+        src="/images/logo/Office2.webp"
+        alt="Office 1"
       />
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
-        src="/images/rooms/P3room1.webp"
-        alt="Room 2"
+        src="/images/logo/Office3.webp"
+        alt="Office 2"
       />
       <img
         className="w-full h-48 md:h-60 lg:h-64 rounded-lg shadow-md object-cover"
@@ -110,10 +224,13 @@ function Home() {
 
   {/* Contact Info */}
   <div className="mt-12 flex flex-col md:flex-row justify-center gap-10 text-white text-lg font-medium">
-    <div className="flex items-center gap-2">
-      <FaPhoneAlt className="text-xl text-yellow-200" />
-      <span>+91 7942682950</span>
+    <div className="flex gap-3 items-center">
+    <FaPhoneAlt className="text-2xl text-yellow-200" />
+    <div className="flex flex-col leading-tight">
+      <span>+91 8109794360</span>
+      <span>+91 7049747730</span>
     </div>
+  </div>
     <div className="flex items-center gap-2">
       <FaEnvelope className="text-xl text-yellow-200" />
       <span>shrijigirlhostel@gmail.com</span>

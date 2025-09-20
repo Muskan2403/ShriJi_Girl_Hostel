@@ -6,7 +6,7 @@ const contactData = [
   {
     id: 1,
     name: "Call Us",
-    info: "+91 7942682950",
+    info: "+91 8109794360",
     icon: <FaPhoneAlt className="text-4xl text-yellow-500 mb-3" />,
   },
   {
