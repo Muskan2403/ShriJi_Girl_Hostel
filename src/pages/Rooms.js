@@ -25,8 +25,6 @@ const roomsData = [
     price: 8000,
     images: [
       "/images/rooms/2room1.webp",
-      "/images/rooms/2room2.webp",
-      "/images/rooms/2room3.webp",
       "/images/rooms/2room4.webp",
       "/images/rooms/2room5.webp",
       "/images/rooms/N_Room1.webp",
