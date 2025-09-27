@@ -9,17 +9,31 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
-
+import UploadImage from "./components/UploadImage";
+import AdminLogin from "./components/AdminLogin";
+import { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase"; // your firebase config
 function App() {
+    const [admin, setAdmin] = useState(null);
+
+    useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setAdmin(user);
+    });
+    return () => unsubscribe();
+  }, []);
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/about" element={<About />} />
-        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/rooms" element={<Rooms isAdmin={!!admin} />} />
         <Route path="/amenities" element={<Amenities />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<Gallery isAdmin={admin} />} />
+        <Route path="/admin/upload" element={<UploadImage />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
