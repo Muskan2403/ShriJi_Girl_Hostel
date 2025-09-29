@@ -26,6 +26,13 @@ export default function Gallery({ isAdmin }) {
         { src: "/images/gallery/Office1.webp", title: "Office1" },
         { src: "/images/gallery/Office2.webp", title: "Office2" },
         { src: "/images/gallery/Office3.webp", title: "Office3" },
+        { src: "/images/gallery/gallery.webp", title: "Gallery1" },
+        { src: "/images/gallery/gallery1.webp", title: "Gallery6" },
+        { src: "/images/gallery/gallery2.webp", title: "Gallery2" },
+        { src: "/images/gallery/gallery3.webp", title: "Gallery3" },
+        { src: "/images/gallery/gallery5.webp", title: "Gallery4" },
+        { src: "/images/gallery/gallery4.webp", title: "Gallery5" },
+
     ];
 
     setGalleryImages([...uploadedImages, ...defaultImages]);
